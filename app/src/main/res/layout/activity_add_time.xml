@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mabdullah.timetracingapp.AddTimeActivity">
+
+
+    <Button
+        android:id="@+id/btn_newTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Neue Zeiterfassung"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="447dp" />
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/btn_newTime"
+        android:background="#ffffff"
+        android:shrinkColumns="*"
+        android:stretchColumns="*"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="48dp">
+
+
+        <!-- Row 1 with single column -->
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+
+        </TableRow>
+
+        <!-- Row 2 with 3 columns -->
+
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_col_1"
+                android:layout_weight="1"
+                android:background="#dcdcdc"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text="Projektname"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/tv_col_2"
+                android:layout_weight="1"
+                android:background="#d3d3d3"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text="Zeit"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/tv_col_3"
+                android:layout_weight="1"
+                android:background="#cac9c9"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text="Löschen"
+                android:textColor="#000000" />
+
+        </TableRow>
+
+        <!-- Row 3 with 3 columns -->
+
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:background="#dcdcdc"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text=""
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_weight="1"
+                android:background="#d3d3d3"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text=""
+                android:textColor="#000000" />
+
+            <TextView
+
+                android:layout_weight="1"
+                android:background="#cac9c9"
+                android:gravity="center"
+                android:padding="20dip"
+                android:textColor="#000000" />
+
+        </TableRow>
+
+
+    </TableLayout>
+
+</android.support.constraint.ConstraintLayout>

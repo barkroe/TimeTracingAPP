@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mabdullah.timetracingapp.HomeActivity">
+
+    <Button
+        android:id="@+id/btn_project"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:text="Neue Projekt erstellen"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="51dp" />
+
+    <Button
+        android:id="@+id/btn_time"
+        android:layout_width="201dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btn_project"
+        android:layout_below="@+id/btn_project"
+        android:layout_marginTop="51dp"
+        android:text="Neue Zeit"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="146dp" />
+
+    <Button
+        android:id="@+id/btn_overview"
+        android:layout_width="203dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btn_logout"
+        android:layout_centerVertical="true"
+        android:text="Projekt Übersicht"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="257dp" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="204dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btn_time"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="128dp"
+        android:text="Logout"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="367dp" />
+
+</RelativeLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mabdullah.timetracingapp.MainActivity">
+
+
+    <TextView
+        android:id="@+id/tv_projectname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="15dp"
+        android:text="Projektname"
+        android:textSize="40px" />
+
+    <EditText
+        android:id="@+id/et_Projectname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tv_projectname"
+        android:layout_below="@+id/tv_projectname"
+        android:layout_marginTop="11dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Projektname" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tv_projectname"
+        android:layout_below="@+id/et_Projectname"
+        android:layout_marginTop="15dp"
+        android:text="Beschreibung"
+        android:textSize="40px" />
+
+    <EditText
+        android:id="@+id/et_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tv_description"
+        android:layout_below="@+id/tv_description"
+        android:layout_marginTop="11dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Beschreibung" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btn_back"
+        android:layout_below="@+id/et_description"
+        android:layout_marginTop="50dp"
+        android:text="Speichern" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/et_description"
+        android:layout_below="@+id/btn_save"
+        android:layout_marginEnd="58dp"
+        android:layout_marginTop="19dp"
+        android:text="zrück" />
+
+
+</RelativeLayout>
