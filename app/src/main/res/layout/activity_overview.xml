@@ -1,18 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.mabdullah.timetracingapp.OverviewActivity">
 
-    <Button
-        android:id="@+id/btn_back"
+
+    <TextView
+        android:id="@+id/tv_projectName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="zurück"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="391dp" />
+        android:text=""
+        android:textSize="50dp"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="34dp"
+        tools:ignore="MissingConstraints" />
 
+    <TextView
+        android:id="@+id/tv_projectbeschreibung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50dp"
+        android:text=""
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="113dp"
+        tools:ignore="MissingConstraints" />
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_projectId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="50dp"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="198dp"
+        tools:ignore="MissingConstraints" />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

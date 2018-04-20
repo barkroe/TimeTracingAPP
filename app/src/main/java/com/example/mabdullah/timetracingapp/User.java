@@ -1,14 +1,43 @@
 package com.example.mabdullah.timetracingapp;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Created by mabdullah on 30.03.2018.
  */
 
 public class User {
 
-    int id ;
-    String name;
-    String password;
+    @JsonProperty("id")
+    private int id ;
+
+    public int getLoki_id() {
+        return loki_id;
+    }
+
+    public void setLoki_id(int loki_id) {
+        this.loki_id = loki_id;
+    }
+
+    @JsonProperty("$loki")
+    private int loki_id ;
+    @JsonProperty("username")
+    private String name;
+    @JsonProperty("password")
+    private String password;
+
+    @JsonProperty("email")
+    private String email;
+
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 
     public User(int id, String name, String password) {
         this.id = id;

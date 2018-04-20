@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mabdullah.timetracingapp">
 
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--     <uses-permission android:name="android.permission.WAKE_LOCK" /> -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -37,7 +38,8 @@
         <activity android:name=".AddProjectActivity" />
         <activity android:name=".OverviewActivity" />
         <activity android:name=".AddTimeActivity" />
-        <activity android:name=".ChooseDate"></activity>
+        <activity android:name=".ChooseDate" />
+        <activity android:name=".ProjectDetails"></activity>
     </application>
 
 </manifest>
