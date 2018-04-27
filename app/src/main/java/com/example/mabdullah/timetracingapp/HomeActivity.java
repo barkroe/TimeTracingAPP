@@ -38,12 +38,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_home);
-             btn_project=(Button)findViewById(R.id.btn_project);
              btn_time=(Button)findViewById(R.id.btn_time);
              btn_overview=(Button)findViewById(R.id.btn_overview);
              btn_logout=(Button)findViewById(R.id.btn_logout);
-
-             btn_project.setOnClickListener(this);
              btn_time.setOnClickListener(this);
              btn_overview.setOnClickListener(this);
              btn_logout.setOnClickListener(this);
@@ -55,15 +52,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case  R.id.btn_project:
-                Intent intent= new Intent(HomeActivity.this, AddProjectActivity.class);
-                startActivity(intent);
-
-                break;
-        }
-        switch (v.getId()){
             case  R.id.btn_time:
-                Intent intent= new Intent(HomeActivity.this, ChooseDate.class);
+                Intent intent= new Intent(HomeActivity.this, AddTimeActivity.class);
+                String userId= getIntent().getStringExtra("userId");
+                intent.putExtra("userId",userId);
                 startActivity(intent);
 
                 break;
