@@ -60,7 +60,11 @@ public class OverviewActivity extends AppCompatActivity {
 
             Log.e(TAG, "Response from url: " + jsonStr);
 
-            if (jsonStr == null) jsonStr = loadData();
+            if (jsonStr == null){
+                SharedPreferences sp=getSharedPreferences("sp",MODE_PRIVATE);
+                jsonStr = sp.getString("userJson",null);
+
+            }
 
                 try {
 
@@ -102,7 +106,7 @@ public class OverviewActivity extends AppCompatActivity {
 
                 }
 
-            saveJson(projectlist);
+//            saveJson(projectlist);
             return projectlist;
         }
 
@@ -115,9 +119,8 @@ public class OverviewActivity extends AppCompatActivity {
              * */
             ListAdapter adapter = new SimpleAdapter(
                     OverviewActivity.this, projectlist,
-                    R.layout.activity_overview, new String[]{"name", "description",
-                    "$loki"}, new int[]{R.id.tv_projectName,
-                    R.id.tv_projectbeschreibung, R.id.tv_projectId});
+                    R.layout.activity_overview, new String[]{"name", "description"}, new int[]{R.id.tv_projectName,
+                    R.id.tv_projectbeschreibung});
 
             lv.setAdapter(adapter);
 
@@ -138,7 +141,7 @@ public class OverviewActivity extends AppCompatActivity {
         }
 
     }
-    private void  saveJson(ArrayList projectlist){
+/*    private void  saveJson(ArrayList projectlist){
         SharedPreferences sp=getSharedPreferences("sp",MODE_PRIVATE);
         SharedPreferences.Editor editor= sp.edit();
         editor.clear();
@@ -148,12 +151,12 @@ public class OverviewActivity extends AppCompatActivity {
         editor.apply();
 
 
-    }
-   private String loadData(){
+    }*/
+   /*private String loadData(){
         SharedPreferences sp=getSharedPreferences("sp",MODE_PRIVATE);
         Gson gson=new Gson();
         String jsonstr = sp.getString("projectJson",null);
         return jsonstr;
-    }
+    }*/
 
 }

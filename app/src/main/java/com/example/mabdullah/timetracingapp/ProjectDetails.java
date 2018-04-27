@@ -25,12 +25,13 @@ import java.util.HashMap;
 public class ProjectDetails extends AppCompatActivity {
 
     String loki_id="";
-
-
+    String projectName="";
+    String userString="";
 
     private String TAG = ProjectDetails.class.getSimpleName();
     private ListView lv;
     private static String url = "http://10.0.2.2:3000/api/tasks";
+    private static String user_url = "http://10.0.2.2:3000/api/users";
 
     ArrayList<HashMap<String, String>> projectDetailsList;
     ArrayList<HashMap<String, String>> projectDetails;
@@ -41,7 +42,7 @@ public class ProjectDetails extends AppCompatActivity {
         String data= getIntent().getStringExtra("projectSelected");
         String[] dataSplit=data.split(",");
         String[] toGeName= dataSplit[0].split("=");
-        String projectName=toGeName[1];
+        projectName=toGeName[1];
         String[] toGetLoki= dataSplit[1].split("=");
          loki_id=toGetLoki[1];
 
@@ -67,6 +68,7 @@ public class ProjectDetails extends AppCompatActivity {
 
             // Making a request to url and getting response
             String jsonStr = sh.makeServiceCall(url);
+            userString = sh.makeServiceCall(user_url);
 
             Log.e(TAG, "Response from url: " + jsonStr);
 
@@ -76,6 +78,8 @@ public class ProjectDetails extends AppCompatActivity {
 
                 // Getting JSON Array node
                 JSONArray projectDetail = new JSONArray(jsonStr);
+                JSONArray users = new JSONArray(userString);
+
 
                 // looping through All projects
                 for (int i = 0; i < projectDetail.length(); i++) {
@@ -86,9 +90,10 @@ public class ProjectDetails extends AppCompatActivity {
                     String description = p.getString("description");
                     String start = p.getString("start");
                     String end = p.getString("end");
-                    String $loki=p.getString("$loki");
-                    String user= p.getString("user");
+                    String userId= p.getString("user");
                     String id=p.getString("id");// get ID for database
+
+
 
 
 
@@ -96,16 +101,23 @@ public class ProjectDetails extends AppCompatActivity {
                     HashMap<String, String> project = new HashMap<>();
 
                     // adding each child node to HashMap key => value
-                    project.put("project", project_id);
+                    project.put("project", projectName);
                     project.put("date", date);
                     project.put("description", description);
                     project.put("start", start);
                     project.put("end", end);
-                    project.put("$loki", $loki);
-                    project.put("user", user);
-                    project.put("id", id);
 
-                    // adding contact to contact list
+
+                    for (int j = 0; j < users.length(); j++) {
+                        JSONObject u = users.getJSONObject(j);
+                        if(u.getString("$loki").equals(userId)){
+                            String  username= u.getString("username");
+                            project.put("username",username);
+                        }
+                    }
+
+
+
                     projectDetailsList.add(project);
                     if(project_id.equals(loki_id)){
                         projectDetails.add(project);
@@ -139,14 +151,14 @@ public class ProjectDetails extends AppCompatActivity {
             ListAdapter adapter = new SimpleAdapter(
                     ProjectDetails.this, projectDetails,
                     R.layout.activity_project_details, new String[]{"project", "date",
-                    "description","start","end","$loki","user","id"}, new int[]{R.id.tv_project,
+                    "description","start","end","username"}, new int[]{R.id.tv_project,R.id.tv_date,
                     R.id.tv_description, R.id.tv_start, R.id.tv_end, R.id.tv_user});
 
             lv.setAdapter(adapter);
 
             lv.setClickable(true);
 
-            
+
         }
 
     }

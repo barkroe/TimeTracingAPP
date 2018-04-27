@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,106 +7,123 @@
     tools:context="com.example.mabdullah.timetracingapp.AddTimeActivity">
 
 
-    <Button
-        android:id="@+id/btn_newTime"
+    <TextView
+        android:id="@+id/projectName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Neue Zeiterfassung"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="447dp" />
-
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/btn_newTime"
-        android:background="#ffffff"
-        android:shrinkColumns="*"
-        android:stretchColumns="*"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="29dp"
+        android:text="Project Name"
+        android:textSize="25dp"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="48dp">
+        tools:layout_editor_absoluteY="16dp" />
 
+    <EditText
+        android:id="@+id/et_projectName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/projectName"
+        android:layout_marginTop="23dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
-        <!-- Row 1 with single column -->
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/projectName"
+        android:textSize="25dp"
+        android:layout_below="@+id/et_projectName"
+        android:text="Date" />
 
+    <EditText
+        android:id="@+id/et_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tv_date"
+        android:layout_below="@+id/tv_date"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
-        </TableRow>
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/et_date"
+        android:textSize="25dp"
+        android:layout_below="@+id/et_date"
+        android:text="Description" />
 
-        <!-- Row 2 with 3 columns -->
+    <EditText
+        android:id="@+id/et_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tv_description"
+        android:layout_below="@+id/tv_description"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
+    <TextView
+        android:id="@+id/tv_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/et_description"
+        android:layout_below="@+id/et_description"
+        android:text="Start"
+        android:textSize="25dp" />
 
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/et_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tv_start"
+        android:layout_below="@+id/tv_start"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
-            <TextView
-                android:id="@+id/tv_col_1"
-                android:layout_weight="1"
-                android:background="#dcdcdc"
-                android:gravity="center"
-                android:padding="20dip"
-                android:text="Projektname"
-                android:textColor="#000000" />
+    <TextView
+        android:id="@+id/tv_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tv_user"
+        android:layout_below="@+id/et_start"
+        android:text="End"
+        android:textSize="25dp" />
 
-            <TextView
-                android:id="@+id/tv_col_2"
-                android:layout_weight="1"
-                android:background="#d3d3d3"
-                android:gravity="center"
-                android:padding="20dip"
-                android:text="Zeit"
-                android:textColor="#000000" />
+    <EditText
+        android:id="@+id/et_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tv_end"
+        android:layout_below="@+id/tv_end"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
-            <TextView
-                android:id="@+id/tv_col_3"
-                android:layout_weight="1"
-                android:background="#cac9c9"
-                android:gravity="center"
-                android:padding="20dip"
-                android:text="Löschen"
-                android:textColor="#000000" />
+    <TextView
+        android:id="@+id/tv_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/tv_start"
+        android:layout_below="@+id/et_end"
+        android:text="User"
+        android:textSize="25dp" />
 
-        </TableRow>
+    <EditText
+        android:id="@+id/et_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/et_end"
+        android:layout_below="@+id/tv_user"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
-        <!-- Row 3 with 3 columns -->
+    <Button
+        android:id="@+id/btn_senddata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/et_user"
+        android:layout_below="@+id/et_user"
+        android:text="Speichern" />
 
-
-        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_weight="1"
-                android:background="#dcdcdc"
-                android:gravity="center"
-                android:padding="20dip"
-                android:text=""
-                android:textColor="#000000" />
-
-            <TextView
-                android:layout_weight="1"
-                android:background="#d3d3d3"
-                android:gravity="center"
-                android:padding="20dip"
-                android:text=""
-                android:textColor="#000000" />
-
-            <TextView
-
-                android:layout_weight="1"
-                android:background="#cac9c9"
-                android:gravity="center"
-                android:padding="20dip"
-                android:textColor="#000000" />
-
-        </TableRow>
-
-
-    </TableLayout>
-
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
